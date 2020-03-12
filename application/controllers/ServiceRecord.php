@@ -68,14 +68,14 @@ Class ServiceRecord extends CI_Controller{
 		echo json_encode($msg);
 	}
 
-	public function ExportToExcelEmployeeRecord($id){
+	/*public function ExportToExcelEmployeeRecord($id){
 		//var_dump($id);
 
 		require(APPPATH, 'third_party/PHPExcel');
 		$result = $this->sr->getEmployeeServiceRecordExcel($id);
 		echo json_encode($result);
 	
-	}
+	}*/
 
 
 
