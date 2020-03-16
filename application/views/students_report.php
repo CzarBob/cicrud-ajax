@@ -76,7 +76,47 @@ $pdf->SetFont('dejavusans', '', 10);
 // add a page
 $pdf->AddPage();
 
+// cellspacing="3" cellpadding="4"$subtable = '<table border="1" cellspacing="6" cellpadding="4"><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table>';
 
+$html = '<h2 align="center">HTML TABLE:</h2>
+<table border="1">';
+$html .= '<tr>
+<th align="center">Name</th>
+<th align="center">Address</th>
+<th align="center">Gender</th>
+<th align="center">Designation</th>
+<th align="center">Age</th>
+</tr>
+';
+foreach($employees as $employee){
+    $html .= '<tr>
+        <td align="center">'.$employee->name.'</td>
+        <td align="center">'.$employee->address.'</td>
+        <td align="center">'.$employee->gender.'</td>
+        <td align="center">'.$employee->designation.'</td>
+        <td align="center">'.$employee->age.'</td>
+        </tr>
+         
+    ';
+}
+    $html .= '</table>';
+
+// output the HTML content
+$pdf->writeHTML($html, true, false, true, false, '');
+
+// Print some HTML Cells
+/*
+$html = '<span color="red">red</span> <span color="green">green</span> <span color="blue">blue</span><br /><span color="red">red</span> <span color="green">green</span> <span color="blue">blue</span>';
+
+$pdf->SetFillColor(255,255,0);
+
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'L', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 1, true, 'C', true);
+$pdf->writeHTMLCell(0, 0, '', '', $html, 'LRTB', 1, 0, true, 'R', true);*/
+
+
+
+/* ------TEST 
 
 $heading = '
 <h3>List of Employees</h3>
@@ -108,7 +148,7 @@ $table .= '<tr>
 $table .= '</table>';
 
 $pdf->writeHTMLCell(0, 0, '', '', $table, 0, 1, 0, true, 'C', true);
-
+*/
 // create some HTML content
 //$html = 'POTAY';
 
