@@ -32,8 +32,8 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 006');
+$pdf->SetAuthor('Czar Zambrano');
+$pdf->SetTitle('Students');
 $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
@@ -77,7 +77,7 @@ $pdf->SetFont('dejavusans', '', 10);
 $pdf->AddPage();
 
 // create some HTML content
-$html = 'HEY YEHEY';
+$html = 'POTAY';
 
 // output the HTML content
 $pdf->writeHTML($html, true, false, true, false, '');
