@@ -33,7 +33,7 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('Czar Zambrano');
-$pdf->SetTitle('Students');
+$pdf->SetTitle('Employee');
 $pdf->SetSubject('TCPDF Tutorial');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
@@ -76,11 +76,45 @@ $pdf->SetFont('dejavusans', '', 10);
 // add a page
 $pdf->AddPage();
 
+
+
+$heading = '
+<h3>List of Employees</h3>
+';
+
+// Print text using writeHTMLCell()
+$pdf->writeHTMLCell(0, 0, '', '', $heading, 0, 1, 0, true, 'C', true);
+$pdf->Ln(8);
+$table = '<table>';
+$table .= '<tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Designation</th>
+            <th>Age</th>
+            </tr>
+            ';
+            foreach($employees as $employee){
+                $table .= '<tr>
+                        <td>'.$employee->name.'</td>
+                        <td>'.$employee->address.'</td>
+                        <td>'.$employee->gender.'</td>
+                        <td>'.$employee->designation.'</td>
+                        <td>'.$employee->age.'</td>
+                        </tr>
+                     
+                ';
+            }
+$table .= '</table>';
+
+$pdf->writeHTMLCell(0, 0, '', '', $table, 0, 1, 0, true, 'C', true);
+
 // create some HTML content
-$html = 'POTAY';
+//$html = 'POTAY';
 
 // output the HTML content
-$pdf->writeHTML($html, true, false, true, false, '');
+//$pdf->writeHTML($html, true, false, true, false, '');
+
 
 // reset pointer to the last page
 $pdf->lastPage();

@@ -6,9 +6,11 @@ class Pdf_Controller extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('Pdf_Library');
+        $this->load->model('Pdf_Model');
     }
 
     public function generate_pdf_report(){
-        $this->load->view('students_report');
+        $data['employees'] = $this->Pdf_Model->select_employees();
+        $this->load->view('students_report', $data);
     }
 }
