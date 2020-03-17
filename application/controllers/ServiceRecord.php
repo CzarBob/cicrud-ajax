@@ -11,6 +11,9 @@ Class ServiceRecord extends CI_Controller{
 	}
 
 	function index(){
+		if ($this->session->userdata('username') != true) {
+			redirect(base_url() . 'main/login');  
+	 }
 		$this->load->view('layout/header');
 		$this->load->view('employee/employeeServiceRecordMain');
 		$this->load->view('layout/footer');

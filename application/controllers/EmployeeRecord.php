@@ -10,6 +10,9 @@ Class EmployeeRecord extends CI_Controller{
 	}
 
 	function index(){
+		if ($this->session->userdata('username') != true) {
+			redirect(base_url() . 'main/login');  
+	 }
 		$this->load->view('layout/header');
 		$this->load->view('employee/employeeServiceRecord');
 		$this->load->view('layout/footer');
