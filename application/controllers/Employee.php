@@ -13,9 +13,14 @@ Class Employee extends CI_Controller{
 		if ($this->session->userdata('username') != true) {
        		  redirect(base_url() . 'main/login');  
       	}
-		$this->load->view('layout/header');
+		/*$this->load->view('layout/header');
 		$this->load->view('employee/index');
-		$this->load->view('layout/footer');
+		$this->load->view('layout/footer');*/
+
+
+		$this->load->view('header');
+		$this->load->view('employee/index');
+		$this->load->view('footer');
 	}
 
 	public function showAllEmployee(){

@@ -1,5 +1,5 @@
 
-<div class="container">
+<!--<div class="container">
 	<h3>Employee Lists</h3>
 	<div class="alert alert-success" style="display: none;">
 		
@@ -18,7 +18,63 @@
 		<tbody id="showdata">
 			
 		</tbody>
+	</table>-->
+
+	<nav class="navbar navbar-default">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                <i class="glyphicon glyphicon-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+	<h3>Employee Lists</h3>
+	<div class="alert alert-success" style="display: none;">
+		
+	</div>
+	<button id="btnAdd" class="btn btn-success">Add New</button>
+	<table class="table table-bordered table-responsive" style="margin-top: 20px;">
+		<thead>
+			<tr> <b>
+				<td>ID</td>
+				<td>Employee Name</td>
+				<td>Address</td>
+				<td>Created at</td>
+				<td>Action</td>
+				</b>
+			</tr>
+		</thead>
+		<tbody id="showdata">
+			
+		</tbody>
+
+
+
+	
+
 	</table>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+</div>
+
+
+
+
 </div>
 
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
@@ -271,5 +327,20 @@
 
 	});
 
+
+
+
 	
 </script>
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+	</script>

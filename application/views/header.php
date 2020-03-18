@@ -9,10 +9,10 @@
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/css/style.css"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css') ?>">
 </head>
-<body>
+<body >
 
 
-<div class="wrapper">
+<div class="wrapper"   style= 'width: 100%'>
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
