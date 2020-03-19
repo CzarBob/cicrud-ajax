@@ -21,7 +21,7 @@
       <center>
                <div class="middle">
                     <div id="login">
-                         <form method="post" action="<?php echo base_url(); ?>main/login_validation">
+                         <form method="post" action="<?php echo base_url(); ?>Dashboard/login_validation">
                               <fieldset class="clearfix">
                               <p ><span class="fa fa-user"></span><input type="text"  name="username"  Placeholder="Username" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
                               <p><span class="fa fa-lock"></span><input type="password"  name="password" Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
